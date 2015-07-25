@@ -44,10 +44,30 @@
       <div class="slides">
 
         <section>
-          <h1>Backdrop CMS</h1>
+          <h1 style="font-weight: 400">Backdrop CMS</h1>
           <h3>for small-medium sized business <br />
             &amp; non-profits</h3>
           <p><a href="http://backdropcms.org">http://backdropcms.org</a></p>
+          <img src="assets/index/images/Drop_lounging_final_black.png" alt="Drop the dragon lounging" style="width: 50%; padding: 15% 5% 2%;" />
+        </section>
+
+        <section style="text-align:left;">
+          <h2>Who Am I?</h2>
+          <img src="assets/index/images/me.jpg" alt="" style="width: 40%; float: right;" />
+          <h3 style="font-weight: bold">Wes Ruvalcaba</h3>
+          <div style="box-sizing: border-box; width: calc(59% - 0.6em);">
+            <ul>
+              <li>Front End Developer at Lullabot</li>
+              <li>Formerly a web designer for 7 years</li>
+              <li>Core contributor to Backdrop</li>
+            </ul>
+            <p style="margin-top: 1em;">Tweet at me (bro!)<br><a href="https://twitter.com/wesruv">@wesruv</a></p>
+          </div>
+        </section>
+
+        <section data-background-color="#fff">
+          This Wes is brought to you by:
+          <img src="assets/index/images/lullabot-slide.jpg" alt="Lullabot" />
         </section>
 
         <section>
@@ -147,7 +167,7 @@
         </section>
 
         <section>
-          <section data-background="assets/index/backgrounds/slate.jpg" class="dark">
+          <section data-background-color="#000" class="dark">
             <img src="assets/index/images/enterprise.jpg">
             <h2 style="color: #fff; font-weight: 600;">Direction</h2>
           </section>
@@ -160,11 +180,11 @@
 
           <section>
             <h2>Drupal Marketshare</h2>
-            <h4>by site traffic</h4>
+            <p>by site traffic</p>
           </section>
 
           <section>
-            <h2>Drupal Code</h2>
+            <h2>Drupal 8 Code</h2>
             <ul>
               <li>Huge codebase (3x more Drupal code by bytes)</li>
               <li>More dependencies (on external libraries)</li>
@@ -185,7 +205,7 @@
           </section>
         </section>
 
-        <section data-background="assets/index/backgrounds/slate.jpg" class="dark">
+        <section data-background-color="#000" class="dark">
           <img src="assets/index/images/raised-hands.jpg">
           <h2 style="color: #fff; font-weight: 600;">Decision Making Process</h2>
         </section>
@@ -200,11 +220,20 @@
 
         <section>
           <section>
+          <h2>How is Backdrop different?</h2>
+          </section>
+          <section>
             <h3>Backdrop Decision Making Process</h3>
             <h1>PMC</h1>
             <p>Project Management Committee</p>
             <img src="assets/index/logos/apache.png">
             <p><small><a href="https://backdropcms.org/leadership" target="_blank">https://backdropcms.org/leadership</a></small></p>
+            <aside class="notes">
+              <ul>
+              <li>Direction of Backdrop is guided by the Backdrop Project Management Committee (PMC).</li>
+              <li>Often but not necessarily committers</li>
+              <li>Ensure that Backdrop follows the ideals of the project philosophy</li>
+              <li>They can change the project philosophy a unanimous vote</aside>
           </section>
 
           <section id="fragments">
@@ -245,16 +274,14 @@
          </ol>
         </section>
 
-        <section data-background="assets/index/backgrounds/slate.jpg" class="dark">
-          <img src="assets/index/images/toilet-line.jpg">
+        <section data-background-color="#000" class="dark">
           <h2 style="color: #fff; font-weight: 600;">When can I use it?</h2>
         </section>
 
          <section>
           <h2>When can I use Drupal 8?</h2>
           <blockquote cite="https://drupalreleasedate.com">Drupal will be released when it's&nbsp;ready.</blockquote>
-          <p>(+- 6 months)</p>
-          <p>Current estimate: <strong>August, 2015</strong></p>
+          <p>Current estimate: <strong>August 28th, 2015</strong></p>
           <p><small><a href="https://drupalreleasedate.com" target="_blank">https://drupalreleasedate.com</a></small></p>
         </section>
 
@@ -266,37 +293,79 @@
         </section>
 
         <section>
-          <h2>Top Modules</h2>
+          <h2>Functionality New to Core</h2>
           <div class="flex-wrapper">
             <div>
-              views<br>
-              ctools<br>
-              token<br>
-              pathauto<br>
-              libraries<br>
-              entity<br>
-              admin_menu<br>
-              webform<br>
-              imce
+              Admin Bar<br>
+              Entity<br>
+              Config<br>
+              Layout System<br>
             </div>
             <div>
+              Path Auto<br>
+              Token<br>
+              Views<br>
+              Views UI<br>
+            </div>
+          </div>
+          <div style="padding-top: 1em; text-align:center">
+            Improved Admin Theme &amp; Interfaces
+          </div>
+        </section>
+        <section>
+          <h2>Modules Removed from Core</h2>
+          <div class="flex-wrapper">
+            <div>
+              Aggregator<br>
+              Blog<br>
+              Dashboard<br>
+              Forum<br>
+              Help<br>
+              OpenNid<br>
+              Overlay<br>
+              Poll<br>
+              Profile<br>
+            </div>
+            <div>
+              RDF<br>
+              Shortcut<br>
+              Statistics<br>
+              Syslog<br>
+              Translation<br>
+              Toolbar<br>
+              Tracker<br>
+              Trigger
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Backdrop Contrib Modules</h2>
+          <div class="flex-wrapper">
+            <div>
+              libraries<br>
+              webform<br>
+              imce
               date<br>
               google_analytics<br>
               wysiwyg<br>
               jquery_update<br>
+            </div>
+            <div>
               ckeditor<br>
               link<br>
               backup_migrate<br>
               rules<br>
               module_filter<br>
             </div>
+          </div>
+          <div style="margin-top: 1em"><a href="https://github.com/backdrop-contrib">Find more on Github</a></div>
         </section>
 
         <section>
           <h2>Community growth</h2>
-          <h4>Since January 15th, 2015</h4>
+          <p>Since January 15th, 2015</p>
           <ul>
-            <li>New or Ported modules: <strong>135</strong></li>
+            <li>New or Ported modules, themes or layouts: <strong>136</strong></li>
             <li>Contributed group members: <strong>38</strong></li>
           </ul>
           <p><a href="https://github.com/backdrop-contrib">https://github.com/backdrop-contrib</a></p>
@@ -308,7 +377,7 @@
 
         <section>
           <h1>Get involved</h1>
-          <p>Google Hangouts every Thursday 1pm PT</p>
+          <p>Google Hangouts every Thursday 4pm ET</p>
           <p>mini-sprints every Thursday after the meeting</p>
           <p>&nbsp;</p>
           <p>
@@ -331,10 +400,11 @@
         </section>
 
         <section>
-          <h1>Backdrop CMS</h1>
+          <h1 style="font-weight:400">Backdrop CMS</h1>
           <h3>for small-medium sized business <br>
             &amp; non-profits</h3>
           <p><a href="http://backdropcms.org">http://backdropcms.org</a></p>
+          <img src="assets/index/images/Drop_lounging_final_black.png" alt="Drop the dragon lounging" style="width: 50%; padding: 15% 5% 2%;" />
         </section>
 
         <section>
