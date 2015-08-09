@@ -7,7 +7,7 @@
 
 // Default mixins and settings -----------------
 @import "../template/mixins";
-@import "../template/wes-settings";
+@import "../template/settings";
 // ---------------------------------------------
 
 
@@ -27,18 +27,19 @@ $headingFont: 'Source Sans Pro', 'Open Sans', Helvetica, sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: none;
+$headingFontWeight: 400;
 $headingH1FontWeight: 200;
-$headingFontWeight: 200;
 $linkColor: #0074bd;
 $linkColorHover: lighten( $linkColor, 15% );
 $selectionBackgroundColor: lighten( $linkColor, 25% );
 $arrow-color: #eee;
-$arrow-background: #000;
+$arrow-background: #555;
+$highlighter-color: #ffec99;
 
 $heading1Size: 2.5em;
-$heading2Size: 1.8em;
-$heading3Size: 1.6em;
-$heading4Size: 1.4em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
 
 section.has-dark-background {
   &, h1, h2, h3, h4, h5, h6 {

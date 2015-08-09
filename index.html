@@ -7,7 +7,7 @@
     <title>Introducing Backdrop CMS</title>
 
     <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-    <meta name="author" content="Hakim El Hattab">
+    <meta name="author" content="Jen Lampton and Nate Haug">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -17,11 +17,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700" media="all" />
 
     <link rel="stylesheet" href="reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="reveal.js/plugin/prism/prism.css">
     <link rel="stylesheet" href="reveal.js/plugin/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="reveal.js/css/theme/backdrop.css" id="theme">
-
-    <!-- Code syntax highlighting -->
-    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -52,24 +50,6 @@
           <img src="assets/index/images/Drop_lounging_final_black.png" alt="Drop the dragon lounging" style="width: 50%; padding: 15% 5% 2%;" />
         </section>
 
-        <section style="text-align:left;">
-          <h2>Who Am I?</h2>
-          <img src="assets/index/images/me.jpg" alt="" style="width: 40%; float: right;" />
-          <h3 style="font-weight: bold">Wes Ruvalcaba</h3>
-          <div style="box-sizing: border-box; width: calc(59% - 0.6em);">
-            <ul>
-              <li>Front End Developer at Lullabot</li>
-              <li>Formerly a web designer for 7 years</li>
-              <li>Core contributor to Backdrop</li>
-            </ul>
-            <p style="margin-top: 1em;">Tweet at me (bro!)<br><a href="https://twitter.com/wesruv">@wesruv</a></p>
-          </div>
-        </section>
-
-        <section data-background-color="#fff">
-          <img src="assets/index/images/lullabot-slide.jpg" alt="Lullabot" />
-        </section>
-
         <section>
           <img src="assets/index/logos/backdrop-wide.png">
           <h3>A fork of Drupal</h3>
@@ -77,7 +57,7 @@
 
         <section>
           <h2 style="font-weight: 600;">Different tools for different jobs</h2>
-          <div class="flex-wrapper">
+          <div class="column-wrapper">
             <div><img src="assets/index/logos/squarespace.png"></div>
             <div><img src="assets/index/logos/wordpress.png"></div>
             <div><img src="assets/index/logos/backdrop.png"></div>
@@ -124,7 +104,8 @@
 
           <section>
             <h4>Backdrop was founded by <br><span style="font-weight: 400">Drupal Core Developers</h4>
-            <div class="flex-wrapper" style="text-align: left; font-size: 0.8em;">
+            <div class="column-wrapper" style="text-align: left; font-size: 0.8em;">
+              <div>
               <div style="padding: 0 1em 0 0">
                 <h5 style="font-size: 1.3em; font-weight: 600;">Nate</h5>
                 <ul>
@@ -133,6 +114,8 @@
                   <li>Dialog system &amp; CKEditor in Drupal 8</li>
                 </ul>
               </div>
+              </div>
+              <div>
               <div style="padding: 0 0 0 1em">
                 <h5 style="font-size: 1.3em; font-weight: 600;">Jen</h5>
                 <ul>
@@ -140,6 +123,7 @@
                   <li>Drupal core usability team member, D7 &amp; D8</li>
                   <li>Twig initiative lead, Drupal 8 (2011 - 2013)</li>
                 </ul>
+              </div>
               </div>
             </div>
           </section>
@@ -156,7 +140,7 @@
 
         <section>
           <h1>Why Fork Drupal?</h1>
-          <div class="flex-wrapper" style="align-items: center;">
+          <div class="column-wrapper" style="align-items: center;">
             <div><img src="assets/index/images/fork-arrows.png"></div>
             <div><img src="assets/index/logos/druplicon.png"></div>
             <div><img src="assets/index/logos/backdrop.png"></div>
@@ -292,7 +276,7 @@
         <section>
           <h2>Top Drupal Modules<br>and their status in Backdrop</h2>
           <div class="modules-list" style="font-size: 0.8em">
-            <div class="flex-wrapper" style="text-align: left; line-height: 1.6;">
+            <div class="column-wrapper" style="text-align: left; line-height: 1.6;">
               <ul style="width: 27%;">
                 <li><i class="fa fa-check-circle"></i> views</li>
                 <li><i class="fa fa-check-circle"></i> ctools</li>
@@ -318,7 +302,7 @@
                 <li><i class="fa fa-check-circle"></i> module_filter</li>
               </ul>
             </div>
-            <ul class="flex-wrapper modules-list-key" style="display: flex; border:2px solid #333; margin-top: .8em;">
+            <ul class="column-wrapper modules-list-key" style="display: flex; border:2px solid #333; margin-top: .8em;">
               <li><i class="fa fa-check-circle"></i> In core</li>
               <li><i class="fa fa-check"></i> Ported</li>
               <li><i class="fa fa-cogs"></i> Underway</li>
@@ -416,7 +400,7 @@
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
           { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'reveal.js/plugin/prism/prism.js', async: true },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
           { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
