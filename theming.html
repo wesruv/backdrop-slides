@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Introducing Backdrop CMS</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Jen Lampton and Nate Haug">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700" media="all" />
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="reveal.js/plugin/prism/prism.css">
+    <link rel="stylesheet" href="reveal.js/plugin/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/backdrop.css" id="theme">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <section>
+          <h1 style="font-weight: 600">Backdrop CMS Theming</h1>
+          <p><a href="https://api.backdropcms.org/developing-themes">api.backdropcms.org/developing-themes</a></p>
+          <img src="assets/index/images/Drop_lounging_final_black.png" alt="Drop the dragon lounging" style="width: 50%; padding: 15% 5% 2%;" />
+        </section>
+
+        <section>
+          <h3>Major differences from <br><i class="fa fa-drupal" style="color: #0074bd"></i>&nbsp;Drupal&nbsp;7's theme layer:</h3>
+          <ul>
+            <li><i class="fa fa-drupal" style="color: #0074bd"></i>'s <code>html.tpl.php</code> <i class="fa fa-arrow-right"></i> Backdrop's <code>page.tpl.php</code></li>
+            <li><i class="fa fa-drupal" style="color: #0074bd"></i>'s <code>page.tpl.php</code> <i class="fa fa-arrow-right"></i> Backdrop's Layout system</li>
+            <li>Layout markup are removed from themes</li>
+            <li>No more region template layer</li>
+          </ul>
+        </section>
+
+        <section>
+          <section class="center">
+            <h2 style="font-weight: 600">Theme Structure</h2>
+          </section>
+
+          <section>
+            <ul class="file-list">
+              <li>Backdrop
+                <ul>
+                  <li>core</li>
+                  <li>modules</li>
+                  <li>profiles</li>
+                  <li>sites</li>
+                  <li>themes
+                    <ul>
+                      <li style="background: #ffec99">mytheme</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <ul class="file-list">
+              <li>mytheme
+                <ul>
+                  <li class="file">mytheme.info</li>
+                  <li class="file">template.php</li>
+                  <li class="file">theme-settings.php</li>
+                  <li class="file">screenshot.png</li>
+                  <li>templates
+                    <ul>
+                      <li class="file">node.tpl.php</li>
+                      <li class="file">page.tpl.php</li>
+                    </ul>
+                  </li>
+                  <li>css</li>
+                  <li>js</li>
+                  <li>images</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+
+
+        </section>
+
+        <section>
+          <h3 style="font-weight: 600;">themename.info</h3>
+          <pre><code class="language-text">name = Theme Name!!!1
+description = The default front-end theme for Backdrop CMS.
+package = Core
+type = theme
+version = 1.0
+backdrop = 1.x
+base_theme = radix
+
+stylesheets[all][] = css/global.css
+stylesheets[print][] = css/print.css
+
+scripts[] = js/global.js</code></pre>
+        </section>
+
+        <section>
+          <h3 style="font-weight: 600">Template.php</h3>
+          <p>The usual suspects... mostly</p>
+          <pre style="font-size: 0.9em"><code class="language-php">mytheme_preprocess_page(&amp;$variables)
+mytheme_preprocess_node(&amp;$variables)
+mytheme_preprocess_layout(&amp;$variables)
+mytheme_preprocess_block(&amp;$variables)
+mytheme_preprocess_field(&amp;$variables)
+mytheme_form_alter(&amp;$form, &amp;$form_state, $form_id)</code></pre>
+        </section>
+
+        <section>
+          <h3 style="font-weight: 600">Node Template</h3>
+          <a href="https://github.com/backdrop/backdrop/blob/1.x/core/modules/node/templates/node.tpl.php">core/modules/node/templates/node.tpl.php</a>
+        </section>
+
+        <section>
+          <h3 style="font-weight: 600">Page Template</h3>
+          <a href="https://github.com/backdrop/backdrop/blob/1.x/core/modules/system/templates/page.tpl.php">core/modules/system/templates/page.tpl.php</a>
+        </section>
+
+
+      </div>
+    </div>
+
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.js"></script>
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'reveal.js/plugin/prism/prism.js', async: true },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+  </body>
+</html>
